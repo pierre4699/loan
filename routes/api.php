@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('materials/get','MaterialController@get');
+
+Route::post('materials/update/{id}','MaterialController@update');
+
+Route::post('materials/create','MaterialController@create');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
