@@ -9,7 +9,7 @@ class MaterialController extends Controller
 {
     public function get(){
         $material = Material::all();
-        return response()->json(['data'=>$material],200, [], JSON_NUMERIC_CHECK);
+        return response()->json($material,200, [], JSON_NUMERIC_CHECK);
     }
     public function create(Request $request){
         $material = Material::create([
