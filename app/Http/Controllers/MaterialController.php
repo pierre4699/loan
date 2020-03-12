@@ -22,4 +22,9 @@ class MaterialController extends Controller
         $material->update($request->all());
         return response()->json(['data'=>$material],200, [], JSON_NUMERIC_CHECK);
     }
+    public function delete(Request $request, $id){
+        $material = Material::findOrFail($id);
+        $material->delete();
+        return response()->json(null,204);
+    }
 }
